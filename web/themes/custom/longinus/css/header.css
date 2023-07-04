@@ -4,18 +4,24 @@ body {
 
 #header {
     position: relative;
+    box-shadow: 0 4px 16px rgba(0,0,0,.1);
+    padding: 16px 0;
 }
 #block-longinus-site-branding .block-branding__link img{
     max-width: 50px;
 }
-#block-longinus-site-branding {
-    display: flex;
+#block-longinus-site-branding .block-branding__link{
+    display: flex; 
     align-items: center;
+    gap: 15px;
+    text-decoration: none;
 }
-#header .contextual-region {
-    position: unset;
+#block-longinus-site-branding .block-branding__site-name {
+    width: 200px;
+    line-height: 1.4;
+    font-size: 18px;
+    color: black;
 }
-
 #header .container{
     display: flex;
     justify-content: space-between;
@@ -27,41 +33,65 @@ body {
 
 }
 
-#header .container .menu{
+#header .container .region-primary-navigation{
     margin: 0;
     padding: 8px 0;
     list-style: none;
     text-align: center;
 }
-#header .container .menu li{
+#header .container .region-primary-navigation li{
     display: inline-block;
     margin: 0 13px;
 }
 
-
-.sub-menu {
+.block-mainnavigation-2__menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.block-mainnavigation-2__menu a:hover {
+    text-shadow: 2px 2px 6px #000000;
+}
+.block-mainnavigation-2__menu a:active {
+    text-shadow: 2px 2px 6px #000000;
+}
+.block-mainnavigation-2__menu-item--expanded .block-mainnavigation-2__menu-item-link {
+    font-size: 20px;
+}
+.block-mainnavigation-2__menu-item--expanded .block-mainnavigation-2__menu-item-link:hover {
+    text-shadow: 2px 2px 6px #000000;
+    cursor: pointer;
+}
+.block-mainnavigation-2__submenu {
     position: absolute;
     display: none;
     left: 0;
     right: 0;
-    top: 90px;
+    top: 40px;
     background-color: #E6AF73;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1440px;
+    margin: 24px auto;
+    z-index: 100;
 }
-.sub-menu li {
+.block-mainnavigation-2__submenu li {
     flex: 0 0 16%;
     text-align: center;
+    max-width: 150px;
 }
-.sub-menu li a {
+.block-mainnavigation-2__submenu li a {
     padding: 24px;
+    display: block;
 }
 
 
-.menu .a-link:hover~.sub-menu {
+.opened {
     display: flex;
 }
-.menu .a-link {
+.region-primary-navigation .block-mainnavigation-2__menu-item-link {
     padding: 24px;
+}
+
+.red {
+    color: red;
 }

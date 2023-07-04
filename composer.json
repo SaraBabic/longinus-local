@@ -28,6 +28,7 @@
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/mailsystem": "^4.4",
         "drupal/paragraphs": "^1.15",
+        "drupal/paragraphs_previewer": "^1.7",
         "drush/drush": "^11.6"
     },
     "conflict": {

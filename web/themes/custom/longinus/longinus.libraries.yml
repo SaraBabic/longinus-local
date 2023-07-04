@@ -4,9 +4,17 @@ global-css:
       css/header.css: {}
       css/language-switcher.css: {}
       css/banner.css: {}
+      css/highlighted.css: {}
+      css/text.css: {}
 
 global-js:
   js:
     js/main.js: {}
   dependencies:
     - core/jquery
+
+global-fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css2?family=MedievalSharp&display=swap': {type: external}
+      '//fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap': {type: external}

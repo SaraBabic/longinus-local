@@ -9,6 +9,7 @@ scss_support: false
 libraries:
   - longinus/global-css
   - longinus/global-js
+  - longinus/global-fonts
 regions:
   branding: Branding
   primary_navigation: 'Primary Navigation'
