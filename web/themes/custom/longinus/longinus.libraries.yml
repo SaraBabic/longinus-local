@@ -1,0 +1,12 @@
+global-css:
+  css:
+    theme:
+      css/header.css: {}
+      css/language-switcher.css: {}
+      css/banner.css: {}
+
+global-js:
+  js:
+    js/main.js: {}
+  dependencies:
+    - core/jquery
