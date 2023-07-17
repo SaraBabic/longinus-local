@@ -27,3 +27,10 @@
 .active-lang a{
     background-color: #e6af7333; 
 }
+.cheeseburger-menu__backdrop--active {
+  top: unset;
+  right: unset;
+  width: unset;
+  height: unset;
+  background-color: unset;
+}

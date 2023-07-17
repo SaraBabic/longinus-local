@@ -91,9 +91,11 @@ html.html.twig * * @ingroup themeable */ #}
   {% endif %}
 
   <section id="content">
-    {% if page.content %}
-    {{ page.content }}
-    {% endif %}
+    <div class="container">
+      {% if page.content %}
+      {{ page.content }}
+      {% endif %}
+    </div>
   </section>
 
   {% if page.postfix_first %}

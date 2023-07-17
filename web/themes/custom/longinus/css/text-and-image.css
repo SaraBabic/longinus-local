@@ -17,6 +17,10 @@
     align-items: center;
     line-height: 1.5;
 }
+.paragraph-text-and-image__field-title-item {
+    font-family: 'MedievalSharp', cursive !important;
+    font-size: 28px;
+}
 @media all and (min-width:768px) {
     .paragraph-text-and-image[data-paragraph-image-position="right"] .paragraph-text-and-image__field-background-image{
         order: 2;

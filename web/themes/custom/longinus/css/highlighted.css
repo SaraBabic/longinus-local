@@ -1,3 +1,4 @@
+
 .region-highlighted #block-tabs .tabs--primary {
     display: flex;
     justify-content: center;
@@ -10,6 +11,8 @@
     border-radius: 4px;
     text-align: center;
     margin: 0 10px;
+    align-items: center;
+    display: grid;
 }
 .region-highlighted #block-tabs li:hover {
     background-color: bisque;
