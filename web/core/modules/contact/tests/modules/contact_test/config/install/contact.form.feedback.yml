@@ -1,7 +1,7 @@
 langcode: en
 status: true
 id: feedback
-label: 'Website feedback'
+label: 'contact'
 recipients: {  }
 reply: ''
 weight: 0

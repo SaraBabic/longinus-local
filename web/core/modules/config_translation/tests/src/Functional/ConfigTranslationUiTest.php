@@ -360,7 +360,7 @@ class ConfigTranslationUiTest extends BrowserTestBase {
 
       // Update translatable fields.
       $edit = [
-        'translation[config_names][contact.form.feedback][label]' => 'Website feedback - ' . $langcode,
+        'translation[config_names][contact.form.feedback][label]' => 'contact - ' . $langcode,
         'translation[config_names][contact.form.feedback][reply]' => 'Thank you for your mail - ' . $langcode,
       ];
 
@@ -371,7 +371,7 @@ class ConfigTranslationUiTest extends BrowserTestBase {
       // Expect translated values in language specific file.
       $override = \Drupal::languageManager()->getLanguageConfigOverride($langcode, 'contact.form.feedback');
       $expected = [
-        'label' => 'Website feedback - ' . $langcode,
+        'label' => 'contact - ' . $langcode,
         'reply' => 'Thank you for your mail - ' . $langcode,
       ];
       $this->assertEquals($expected, $override->get());
@@ -383,7 +383,7 @@ class ConfigTranslationUiTest extends BrowserTestBase {
 
       // Visit language specific version of form to check label.
       $this->drupalGet($langcode . '/contact/feedback');
-      $this->assertSession()->pageTextContains('Website feedback - ' . $langcode);
+      $this->assertSession()->pageTextContains('contact - ' . $langcode);
 
       // Submit feedback.
       $edit = [
@@ -400,7 +400,7 @@ class ConfigTranslationUiTest extends BrowserTestBase {
       $langcode_prefixes = array_merge([''], $this->langcodes);
       foreach ($langcode_prefixes as $langcode_prefix) {
         $this->drupalGet(ltrim("$langcode_prefix/$translation_base_url/$langcode/edit", '/'));
-        $this->assertSession()->fieldValueEquals('translation[config_names][contact.form.feedback][label]', 'Website feedback - ' . $langcode);
+        $this->assertSession()->fieldValueEquals('translation[config_names][contact.form.feedback][label]', 'contact - ' . $langcode);
         $this->assertSession()->pageTextContains($label);
       }
     }

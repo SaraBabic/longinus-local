@@ -2107,7 +2107,7 @@ $connection->insert('contact')
 ))
 ->values(array(
   'cid' => '1',
-  'category' => 'Website feedback',
+  'category' => 'contact',
   'recipients' => 'admin@example.com',
   'reply' => '',
   'weight' => '0',

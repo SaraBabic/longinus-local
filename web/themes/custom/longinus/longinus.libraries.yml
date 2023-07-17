@@ -15,8 +15,9 @@ global-css:
       css/text-and-image.css: {}
       css/video.css: {}
       css/gallery.css: {}
-      css/login.css: {}
+      css/forms.css: {}
       css/basic-page.css: {}
+      css/taxonomy.css: {}
 
 global-js:
   js:
