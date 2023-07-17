@@ -12,6 +12,18 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "sachinchoolur/lightgallery",
+                "type": "drupal-library",
+                "version": "1.6.11",
+                "dist": {
+                    "url": "https://github.com/sachinchoolur/lightGallery/archive/1.6.11.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -23,13 +35,20 @@
         "drupal/eu_cookie_compliance": "^1.24",
         "drupal/field_group": "^3.4",
         "drupal/field_group_link": "^3.1",
-        "drupal/focal_point": "^1.5",
+        "drupal/focal_point": "^2.0",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",
+        "drupal/lightgallery": "^1.1",
         "drupal/mailsystem": "^4.4",
         "drupal/paragraphs": "^1.15",
         "drupal/paragraphs_previewer": "^1.7",
-        "drush/drush": "^11.6"
+        "drupal/pathauto": "^1.11",
+        "drupal/pub_options": "^2.0",
+        "drupal/svg_formatter": "^2.0",
+        "drupal/twig_tweak": "^3.2",
+        "drupal/video_embed_field": "^2.5",
+        "drush/drush": "^11.6",
+        "sachinchoolur/lightgallery": "^1.6"
     },
     "conflict": {
         "drupal/drupal": "*"

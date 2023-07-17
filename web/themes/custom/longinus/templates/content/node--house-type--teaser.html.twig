@@ -14,14 +14,7 @@ not node.isPublished() ? longinus_block ~ '--unpublished',
 <a{{ attributes.addClass(classes) }} href="#{{ node.id }}">
     {% block content %}
       <div{{ content_attributes.addClass(longinus_block ~ '__content') }}>
-          {% if display_submitted %}
-              <footer class="{{ longinus_block }}__meta">
-                  <div{{ author_attributes.addClass(longinus_block ~ '__submitted') }}>
-                      {{ date }}
-                      {{ metadata }}
-                  </div>
-              </footer>
-          {% endif %}
+          
           {{ content|without('links') }}
       </div>
 

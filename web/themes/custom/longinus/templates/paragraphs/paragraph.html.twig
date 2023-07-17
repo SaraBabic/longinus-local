@@ -1,9 +1,9 @@
-{% set studiopresent_block = studiopresent_block ?: ('paragraph-' ~ paragraph.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class %}
+{% set longinus_block = longinus_block ?: ('paragraph-' ~ paragraph.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class %}
 
 {%
   set classes = [
     'paragraph',
-    studiopresent_block
+    longinus_block
   ]
 %}
 
@@ -48,13 +48,13 @@
 
 {# {% set fluid = '{{ content.field_fluid|render|striptags|trim }}' %} #}
 
-	<div class="{{ studiopresent_block ~ "__container" }}">
+	<div class="{{ longinus_block ~ "__container" }}">
 		{% block content %}
       {# BANNER #}
       {% if paragraph.bundle == "banner" %}
         {{ content.field_background_image }}
-         <div class="{{studiopresent_block}}__text">
-           <div class="{{studiopresent_block}}__text-wrap">
+         <div class="{{longinus_block}}__text">
+           <div class="{{longinus_block}}__text-wrap">
             {{ content.field_title }}
             {{ content.field_body }}
             {{ content.field_links_multiple }}
@@ -63,8 +63,8 @@
          {# Image #}
          {% elseif paragraph.bundle == "image" %}
         {{ content.field_background_image }}
-         <div class="{{studiopresent_block}}__text">
-           <div class="{{studiopresent_block}}__text-wrap">
+         <div class="{{longinus_block}}__text">
+           <div class="{{longinus_block}}__text-wrap">
             {{ content.field_title }}
             {{ content.field_body }}
             {{ content.field_links_multiple }}
@@ -79,36 +79,23 @@
         {{ content.field_title }}
         {{ content.field_background_image }}
       {# GALLERY #}
-      {# {% elseif paragraph.bundle == "gallery" %}
-        {{ content.field_title }}
+      {% elseif paragraph.bundle == "gallery" %}
         {% if content.field_gallery %}
         <div id="lightGallery" data-light-gallery>
           {% for item in content.field_gallery['#items'] %}
-            {% if loop.first %}
-            {% set image_uri = item.entity.uri.value %}
-            <div class="big-image image-item" data-src="{{ image_uri| image_style('location_card_1280x650_') }}">
-
-              <span class="image-source">{{ item.content['#build']['media-source'] }}</span>
+            {% set image_uri = file_url(item.entity.uri.value) %}
+            <div class="image-item" data-src="{{image_uri}}" >
               <a href="">
-                <img src="{{ image_uri| image_style('location_card_1280x650_') }}"/>
-              </a>
-
-            </div>
-            {% else %}
-            {% set image_uri = item.entity.uri.value %}
-            <div class="small-image image-item" data-src="{{image_uri| image_style('location_card_1280x650_')}}" >
-              <a href="">
-                <img src="{{image_uri| image_style('location_card_405x230_')}}" />
+                <img src="{{image_uri}}" />
               </a>
             </div>
-            {% endif %}
           {% endfor %}
         </div>
-        {% endif %} #}
+        {% endif %}
       {# SHORTCUTS #}
       {% elseif paragraph.bundle == "shortcuts" %}
         {{ content.field_title }}
-        <div class="{{studiopresent_block}}__content">
+        <div class="{{longinus_block}}__content">
           {{ content.field_paragraphs }}
           <div>
             {{ content.field_background_image }}
@@ -151,7 +138,7 @@
       {# CART WITH ICONS #}
       {% elseif paragraph.bundle == "card_with_icons" %}
         {{ content.field_icon_svg }}
-        <div class="{{studiopresent_block}}__text">
+        <div class="{{longinus_block}}__text">
           {{ content.field_title }}
           {{ content.field_body }}
           {{ content.field_link }}
@@ -159,7 +146,7 @@
       {# CARD #}
       {% elseif (paragraph.bundle == "card") %}
         {{ content.field_background_image }}
-        <div class="{{studiopresent_block}}__text">
+        <div class="{{longinus_block}}__text">
           {{ content.field_title }}
           {{ content.field_body }}
           {{ content.field_link }}
@@ -192,20 +179,17 @@
           {{ content.field_room}}
       {# FORM #}
       {% elseif (paragraph.bundle == "form") %}
-        <div class="{{studiopresent_block}}__text" {% if content.field_anchor|render|striptags|trim|lower %} id="{{ content.field_anchor|render|striptags|trim|lower }}" {% endif %}>
+        <div class="{{longinus_block}}__text" {% if content.field_anchor|render|striptags|trim|lower %} id="{{ content.field_anchor|render|striptags|trim|lower }}" {% endif %}>
           {{ content.field_title }}
           {{ content.field_form	 }}
         </div>
       {# Text and Image #}
       {% elseif (paragraph.bundle == "text_and_image") %}
-        {% if content.field_fluid|render|striptags|trim == 'Yes' %}
-          <div class="{{studiopresent_block}}__background" style="background-image: url({{ background_image }})">
-          </div>
-        {% elseif content.field_fluid|render|striptags|trim == 'No' %}
+        
           {{ content.field_background_image }}
-        {% endif %}
-        <div class="{{studiopresent_block}}__text">
-          <div class="{{studiopresent_block}}__text-wrapper">
+        
+        <div class="{{longinus_block}}__text">
+          <div class="{{longinus_block}}__text-wrapper">
             {{ content.field_title }}
             {{ content.field_body }}
             {{ content.field_link }}
@@ -261,7 +245,7 @@
         {{ content|without('field_margin') }}
       {# QUOTE #}
       {% elseif (paragraph.bundle == "quotes") %}
-      <div class="{{studiopresent_block}}__quote">
+      <div class="{{longinus_block}}__quote">
         {% if content.field_body %}
           {{ content.field_body }}
         {% endif %}
@@ -269,12 +253,12 @@
       {# Accordion Parent #}
       {% elseif paragraph.bundle == "accordion_parent" %}
       <dl class="accordion">
-        <dt class="{{studiopresent_block}}__accordion-title">
+        <dt class="{{longinus_block}}__accordion-title">
           <a href="#{{ content.field_anchor|render|striptags|trim|lower }}">
             {{ content.field_title }}
           </a>
         </dt>
-        <dd class="{{studiopresent_block}}__accordion-body">
+        <dd class="{{longinus_block}}__accordion-body">
           {{ content.field_body }}
           {{ content.field_accordion_items }}
         </dd>
@@ -282,12 +266,12 @@
       {# Accordion Child #}
       {% elseif paragraph.bundle == "accordion_child" %}
       <dl class="accordion">
-        <dt class="{{studiopresent_block}}__accordion-title">
+        <dt class="{{longinus_block}}__accordion-title">
           <a href="#{{ content.field_anchor|render|striptags|trim|lower }}">
             {{ content.field_title }}
           </a>
         </dt>
-        <dd class="{{studiopresent_block}}__accordion-body">
+        <dd class="{{longinus_block}}__accordion-body">
           {{ content.field_body }}
         </dd>
       </dl>

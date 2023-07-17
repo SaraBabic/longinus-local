@@ -1,6 +1,7 @@
 .region-highlighted #block-tabs .tabs--primary {
     display: flex;
     justify-content: center;
+    margin: 40px 0;
 }
 .region-highlighted #block-tabs li {
     list-style: none;
@@ -16,4 +17,5 @@
 .region-highlighted #block-tabs a{
     text-decoration: none;
     color: black;
+    display: block;
 }
