@@ -44,7 +44,6 @@
       });
   /* Lightgallery. */
   $(function () {
-    console.log("light");
     $("[data-light-gallery]").lightGallery({
       auto: false,
       thumbnail: false,
@@ -53,5 +52,28 @@
       fullScreen: false,
     });
   });
+
+  // Swiper
+
+  if ($('.path-frontpage .view-banners-block-1 .swiper-container').length > 0) {
+    console.log('here');
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        effect: 'slide',
+        autoplay: {
+          delay: 8000,
+          disableOnInteraction: false,
+          speed: 600,
+        },
+        autoplayDisableOnInteraction: false,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
+    });
+    console.log('here2');
+}
 
   })(jQuery, Drupal);

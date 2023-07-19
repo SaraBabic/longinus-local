@@ -5,6 +5,9 @@
     padding-top: 50px;
     margin-bottom: 16px;
 }
+.node-page-full__content {
+    position: relative;
+}
 .node-page-full__body h2{
     position: relative;
     font-family: 'MedievalSharp', cursive !important;
