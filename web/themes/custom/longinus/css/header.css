@@ -134,9 +134,6 @@ body {
     .opened-doings {
         display: flex;
     }
-    .red {
-        color: red;
-    }
 }
 @media all and (min-width:1440px) {
     #block-longinus-site-branding .block-branding__site-name {

@@ -126,6 +126,10 @@ class ComposerStaticIniteec143bcd5a218dfd8e1412f02714b51
             'GuzzleHttp\\' => 11,
             'Grasmash\\Expander\\' => 18,
         ),
+        'F' => 
+        array (
+            'Firebase\\JWT\\' => 13,
+        ),
         'E' => 
         array (
             'Enlightn\\SecurityChecker\\' => 25,
@@ -384,6 +388,10 @@ class ComposerStaticIniteec143bcd5a218dfd8e1412f02714b51
         'Grasmash\\Expander\\' => 
         array (
             0 => __DIR__ . '/..' . '/grasmash/expander/src',
+        ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'Enlightn\\SecurityChecker\\' => 
         array (
